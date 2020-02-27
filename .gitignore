@@ -1,0 +1,11 @@
+.idea
+.idea/
+.idea/*
+.idea/runConfigurations/
+*.iml
+*.ipr
+*.iws
+*.log*
+.DS_Store
+package-lock.json
+node_modules/
