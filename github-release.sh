@@ -109,3 +109,4 @@ version=`cat package.json | jq -r ".version"`
 echo "Release ${branch} branch of ${repositoryName} v${version}"
 curl --data "$(github_release_data)" "https://api.github.com/repos/${repositoryName}/releases?access_token=${githubToken}"
 #echo $?
+#TODO: FIXME: Add assets to release (zip archives after `npm un build` + `npm run zip` commands...

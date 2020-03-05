@@ -35,10 +35,46 @@ npm start
 
 ### build
 
+_install packager_
+
 ```bash
 npm i -ED electron-packager
-echo "release-builds/" >> .gitignore
-npm run package-mac
+```
+
+_add scripts_
+
+```bash
+vi package.json
+```
+
+```json
+{
+  "scripts": {
+    "start": "electron .",
+    "build": "npm-run-all package:*",
+    "package:mac": "  electron-packager . electron-tutorial-app --overwrite --asar --platform=darwin --arch=x64 --prune=true --out=dist  --version-string.CompanyName=daggerok --version-string.FileDescription=UA --version-string.ProductName=\"MyElectro\"",
+    "package:linux": "electron-packager . electron-tutorial-app --overwrite --asar --platform=linux  --arch=x64 --prune=true --out=dist  --version-string.CompanyName=daggerok --version-string.FileDescription=UA --version-string.ProductName=\"MyElectro\""
+    "zip": "for i in `ls dist` ; do zip -d dist/$i > dist/$i.zip ; done"
+  }
+}
+```
+
+_build apps_
+
+```bash
+npm run build
+```
+
+_package apps_
+
+```bash
+npm run zip
+```
+
+_test archives_
+
+```bash
+unzip dist/electron-tutorial-app-darwin-x64.zip -d dist/app  
 ```
 
 ### prepare
