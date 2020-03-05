@@ -1,4 +1,5 @@
-# my electro...
+# my electro
+Quick electron getting started guide...
 
 ## create
 
@@ -28,4 +29,10 @@ your `package.json` file:
 
 ```bash
 npm start
+```
+
+## deploy
+
+```bash
+npm i -ED electron-packager
 ```
