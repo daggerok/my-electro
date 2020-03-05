@@ -31,8 +31,35 @@ your `package.json` file:
 npm start
 ```
 
-## deploy
+## release
+
+### build
 
 ```bash
 npm i -ED electron-packager
+echo "release-builds/" >> .gitignore
+npm run package-mac
+```
+
+### prepare
+
+```bash
+git add .
+git commit -am ...
+```
+
+### perform using node
+
+```bash
+npm version patch
+#npm version patch -m "Message..."
+git push origin --tags
+```
+
+### perform using [github-release.sh](github-release.sh) script
+
+```bash
+GITHUB_TOKEN=abcd123... ./github-release.sh "Message..."
+## or:
+# ./github-release.sh "Message..." abcd123...
 ```

@@ -52,6 +52,9 @@ function usage() {
     GITHUB_TOKEN=$githubToken ./github-release.sh "`cat ./path/to/RELEASE_NOTES.txt`"
     # last one depends on content, but does not really worked with big files
     # and complex formats, such as markdown, asciidoctor, etc...
+  or:
+    npm version patch
+    git push origin --tags
   NOTE: replace your $messageBody and $githubToken values.'
 }
 ## verify value by passing argument name as 1st param and argument value itself as 2nd parameter:
