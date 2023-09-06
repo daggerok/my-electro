@@ -6,8 +6,9 @@
   "scripts": {
     "start": "electron .",
     "build": "npm-run-all package:*",
-    "package:mac": "  electron-packager . electron-tutorial-app --overwrite --asar --platform=darwin --arch=x64 --prune=true --out=dist  --version-string.CompanyName=daggerok --version-string.FileDescription=UA --version-string.ProductName=\"MyElectro\"",
-    "package:linux": "electron-packager . electron-tutorial-app --overwrite --asar --platform=linux  --arch=x64 --prune=true --out=dist  --version-string.CompanyName=daggerok --version-string.FileDescription=UA --version-string.ProductName=\"MyElectro\"",
+    "package:mac": "  electron-packager . electron-tutorial-app --overwrite --asar --platform=darwin --arch=x64  --prune=true --out=dist  --version-string.CompanyName=daggerok --version-string.FileDescription=UA --version-string.ProductName=\"MyElectro\"",
+    "package:linux": "electron-packager . electron-tutorial-app --overwrite --asar --platform=linux  --arch=x64  --prune=true --out=dist  --version-string.CompanyName=daggerok --version-string.FileDescription=UA --version-string.ProductName=\"MyElectro\"",
+    "predoes-not-working:package:win": "brew reinstall --cask wine-stable",
     "does-not-working:package:win": "electron-packager . electron-tutorial-app --overwrite --asar --platform=win32 --arch=ia32 --prune=true --out=dist --version-string.CompanyName=daggerok --version-string.FileDescription=UA --version-string.ProductName=\"MyElectro\"",
     "zip": "for i in $(ls dist) ; do zip dist/$i.zip -r dist/$i ; done"
   },
@@ -19,8 +20,8 @@
   "author": "daggerok",
   "license": "ISC",
   "devDependencies": {
-    "electron": "10.1.3",
-    "electron-packager": "14.2.1",
+    "electron": "26.1.0",
+    "electron-packager": "17.1.2",
     "npm-run-all": "4.1.5"
   }
 }
